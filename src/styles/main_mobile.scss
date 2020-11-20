@@ -1,0 +1,76 @@
+@import "./colors";
+@import "./responsive_mixins";
+@import "./fonts_sizes";
+
+@include LargeMonitorView() {
+  nav {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+
+    .burger-wrapper {
+      display: none;
+    }
+
+    .nav__logo {
+      grid-column: 1/3;
+    }
+
+    .nav__links {
+      grid-column: 3/5;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: static;
+      transform: translateX(0);
+      flex-direction: row;
+      height: 100%;
+      background-color: transparent;
+
+      li {
+        list-style: none;
+        position: relative;
+        height: 100%;
+        width: 15%;
+
+        // To align items center
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        a {
+          color: $tertiaryColor;
+          position: relative;
+
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+
+        .hoverOverlay {
+          opacity: 1;
+          background-color: $primaryColor;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          transform: skew(-20deg);
+          transition: opacity 0.4s;
+        }
+
+        .hovered {
+          color: white;
+        }
+      }
+    }
+  }
+
+  //   Main Content
+
+  .section__maincontent {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+}

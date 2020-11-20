@@ -1,1 +1,359 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+nav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  height: 10vh;
+  border-bottom: 1px solid #bec2c5;
+  padding: 0 1.6rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  -webkit-box-shadow: 0 10px 10px #bdbdbd;
+          box-shadow: 0 10px 10px #bdbdbd;
+}
+
+nav .nav__logo {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+nav .nav__links {
+  position: fixed;
+  right: 0;
+  top: 10vh;
+  height: 90vh;
+  background-color: #00a7e0;
+  width: 100%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  z-index: 1;
+}
+
+nav .nav__links li {
+  list-style: none;
+}
+
+nav .nav__links li a {
+  text-decoration: none;
+  color: #343e48;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav .burger-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .burger-wrapper .burger-menu {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4/5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 35px;
+  width: 50px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+nav .burger-wrapper .burger-menu .burger__line1,
+nav .burger-wrapper .burger-menu .burger__line2,
+nav .burger-wrapper .burger-menu .burger__line3 {
+  background-color: #00a7e0;
+  height: 5px;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+nav .nav-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+nav .toggle__links .burger__line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+          transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+nav .toggle__links .burger__line2 {
+  opacity: 0;
+}
+
+nav .toggle__links .burger__line3 {
+  -webkit-transform: rotate(45deg) translate(-10px, -10px);
+          transform: rotate(45deg) translate(-10px, -10px);
+}
+
+.section__maincontent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-top: 4em;
+}
+
+.section__maincontent aside {
+  padding: 0 2.3em;
+  margin-bottom: 3em;
+  width: 100%;
+}
+
+.section__maincontent aside .aside__content .aside__header {
+  height: 47px;
+  padding: 0 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  background-color: #e4e2e2;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section__maincontent aside .aside__content .aside__header::before {
+  content: "";
+  background-color: #e4e2e2;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  bottom: -10%;
+  right: 15%;
+  z-index: -1;
+  -webkit-transform: rotate(55deg) skew(20deg);
+          transform: rotate(55deg) skew(20deg);
+}
+
+.section__maincontent aside .aside__content ul {
+  width: 85%;
+  margin: 10px auto;
+  list-style: none;
+}
+
+.section__maincontent aside .aside__content ul li a {
+  color: #343e48;
+  text-decoration: none;
+}
+
+.section__maincontent aside .aside__content ul li::before {
+  content: "\2022";
+  color: #00a7e0;
+  font-weight: bold;
+  display: inline-block;
+  width: 4%;
+}
+
+.section__maincontent article {
+  padding: 2em 2.3em;
+  margin: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+.section__maincontent article h1 {
+  color: #00a7e0;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.section__maincontent article h2 {
+  color: #343e48;
+  font-style: italic;
+  margin-left: 0.8em;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.section__maincontent article p {
+  margin-top: 2em;
+  font-size: 0.8rem;
+}
+
+.section__maincontent article .article__assetwrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2em;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  margin-top: 3em;
+}
+
+.section__maincontent article .article__assetwrapper .asset {
+  border: 2px solid #38b7e3;
+  position: relative;
+  cursor: pointer;
+}
+
+.section__maincontent article .article__assetwrapper .asset img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section__maincontent article .article__assetwrapper .asset .overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: white;
+  background-color: #147da0;
+}
+
+.section__maincontent article .article__assetwrapper .asset .overlay h4 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.section__maincontent article .article__assetwrapper .asset .overlay p {
+  font-size: 0.8rem;
+  margin-top: 0em;
+}
+
+.section__maincontent article .article__assetwrapper .asset .overlayLeft {
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+}
+
+.section__maincontent article .article__assetwrapper .asset:hover .overlay {
+  opacity: 0.8;
+  width: 100%;
+}
+
+@media screen and (min-width: 1400px) {
+  nav .burger-wrapper {
+    display: none;
+  }
+  nav .nav__logo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  nav .nav__links {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3/5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: static;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100%;
+    background-color: transparent;
+  }
+  nav .nav__links li {
+    list-style: none;
+    position: relative;
+    height: 100%;
+    width: 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav .nav__links li a {
+    color: #343e48;
+    position: relative;
+  }
+  nav .nav__links li a:hover {
+    color: #00a7e0;
+  }
+  nav .nav__links li .hoverOverlay {
+    opacity: 1;
+    background-color: #00a7e0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    -webkit-transform: skew(-20deg);
+            transform: skew(-20deg);
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+  }
+  nav .nav__links li .hovered {
+    color: white;
+  }
+}
+/*# sourceMappingURL=main.css.map */
