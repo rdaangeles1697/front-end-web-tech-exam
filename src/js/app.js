@@ -2,7 +2,7 @@
 function assetsTemplate(heading, description, path) {
   return `
     <div class="asset">
-      <img src="../images/${path}" alt="" />
+      <img src="./src/images/${path}" alt="" />
 
       <div class="overlay overlayLeft">
         <div>

@@ -1,19 +1,20 @@
-@mixin mobileView {
-  @content;
-}
-
 @mixin tabletView {
-  @media (min-width: 640px) {
+  @media (min-width: 620px) {
     @content;
   }
 }
 
 @mixin smallMonitorView {
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 960px) {
     @content;
   }
 }
-@mixin LargeMonitorView {
+@mixin mediumMonitorView {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin largeMonitorView {
   @media screen and (min-width: 1400px) {
     @content;
   }

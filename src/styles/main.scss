@@ -9,86 +9,111 @@
   font-family: "Open Sans", sans-serif;
 }
 
-// navbar
+// Navbar
+
 nav {
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid $borderColor;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 10vh;
-  border-bottom: 1px solid $borderColor;
-  padding: 0 1.6rem;
-
-  // For mobile view only
+  padding: 0 1.3em;
   position: fixed;
-  width: 100%;
   top: 0;
   background-color: white;
-  box-shadow: 0 10px 10px rgb(189, 189, 189);
+  box-shadow: 0 10px 10px rgb(194, 194, 194);
+  z-index: 10;
 
   .nav__logo {
-    grid-column: 1/4;
+    grid-column: 1/3;
     align-self: center;
   }
 
   .nav__links {
-    // display: none;
-    position: fixed;
-    right: 0;
-    top: 10vh;
-    height: 90vh;
+    grid-column: 3/5;
     background-color: $primaryColor;
+    position: fixed;
+    height: 90%;
     width: 100%;
-    transform: translateX(100%);
-    z-index: 1;
-    // transition: all 0.3s ease;
+    top: 100px;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9;
+    transition: all 0.3s linear;
+    padding:2em;
+
     li {
       list-style: none;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
 
       a {
         text-decoration: none;
-        color: $tertiaryColor;
+        color: white;
         text-transform: uppercase;
         font-weight: 600;
+        position: relative;
         font-size: $regular-14;
-        transition: 0.3s;
+
+        &:hover {
+          color: $tertiaryColor;
+        }
+      }
+
+      .hoverOverlay {
+        position: absolute;
+        transform: skew(0);
+        background-color: white;
+        width: 50%;
+        height: 40%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .hovered {
+        color: black;
+
+        &:hover {
+          color: $primaryColor;
+        }
       }
     }
   }
 
-  // For animation
-  // Burger menu when in mobile view
-  .burger-wrapper {
-    width: 100%;
-    height: 100%;
+  // Burger Menu
+  .burger-menu {
+    cursor: pointer;
+    position: fixed;
+    width: 50px;
+    height: 35px;
+    right: 5%;
+    top: 2em;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+    z-index: 2;
 
-    .burger-menu {
-      grid-column: 4/5;
-      display: flex;
-      justify-content: end;
-      align-items: center;
-      flex-direction: column;
-      height: 35px;
-      width: 50px;
-
-      // Center element vertically
-      align-self: center;
-
-      .burger__line1,
-      .burger__line2,
-      .burger__line3 {
-        background-color: $primaryColor;
-        height: 5px;
-        width: 90%;
-        margin: auto;
-        border-radius: 10px;
-      }
+    .burger__line1,
+    .burger__line2,
+    .burger__line3 {
+      background-color: $primaryColor;
+      height: 5px;
+      width: 90%;
+      margin: auto;
+      border-radius: 10px;
     }
   }
 
   .nav-active {
-    transform: translateX(0%);
+    right: 0%;
   }
   .toggle__links {
     .burger__line1 {
@@ -107,20 +132,24 @@ nav {
   }
 }
 
-.section__maincontent {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column-reverse;
-  margin-top: 4em;
-  //   border: 1px solid blue;
-  // ====================================================================================
-  // ASIDE
+// Section - Main content
 
+.section__maincontent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 7em;
+
+  aside,
+  article {
+    padding: 0 3rem;
+  }
+
+  // ======================================================================
+  // ASIDE'S STYLE
   aside {
-    padding: 0 2.3em;
-    margin-bottom: 3em;
-    width: 100%;
+    grid-row: 2/5;
+    grid-column: 1/5;
+    margin-bottom: 2em;
 
     .aside__content {
       .aside__header {
@@ -132,6 +161,8 @@ nav {
         background-color: $secondaryColor;
         text-transform: uppercase;
         position: relative;
+        font-size: $regular-14;
+        font-weight: 600;
 
         &::before {
           content: "";
@@ -168,13 +199,15 @@ nav {
       }
     }
   }
-  // ====================================================================================
-  // ARTICLE
+
+  // ======================================================================
+  // ARTICLE'S STYLE
   article {
-    padding: 2em 2.3em;
-    margin: 0;
-    box-shadow: none;
-    border: none;
+    grid-column: 1/5;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    text-align: justify;
 
     h1 {
       color: $primaryColor;
@@ -195,11 +228,12 @@ nav {
       font-size: $regular-14;
     }
 
+    // ASSET'S STYLE
     .article__assetwrapper {
       display: grid;
-      grid-gap: 2em;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-auto-rows: auto;
+      grid-gap: 2em;
       margin-top: 3em;
 
       .asset {
