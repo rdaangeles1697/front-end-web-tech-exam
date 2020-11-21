@@ -283,6 +283,8 @@ nav .toggle__links .burger__line3 {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center 15%;
+     object-position: center 15%;
 }
 
 .section__maincontent article .article__assetwrapper .asset .overlay {
